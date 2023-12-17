@@ -1,20 +1,27 @@
 package com.example.myapplication;
 
+import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
 
 import androidx.annotation.NonNull;
 
+import java.nio.file.FileSystem;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import dalvik.system.ApplicationRuntime;
 
 public final class LocalDB {
     private SQLiteDatabase localdb;
     private Table currentTable = Table.Null;
     public LocalDB()
     {
-        localdb = SQLiteDatabase.openDatabase("//data/data/com.example.myapplication/database/localDB.db", null, SQLiteDatabase.CREATE_IF_NECESSARY);;
+
+        localdb = SQLiteDatabase.openDatabase("/data/data/com.example.myapplication/localDB.db", null, SQLiteDatabase.CREATE_IF_NECESSARY);
     }
     public Table getCurrentTable() { return currentTable; }
     public void setCurrentTable(Table table)

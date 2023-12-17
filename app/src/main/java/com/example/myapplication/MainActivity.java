@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         instance = this;
+
         drawableBorder = new Drawable() {
             @Override
             public void draw(@NonNull Canvas canvas) {
